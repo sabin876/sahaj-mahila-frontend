@@ -183,6 +183,27 @@
       <span class="visually-hidden">Next</span>
     </button>
   </div>
+  ---->
+  <section class="counter">
+    <div class="counter-item">
+      <h2 class="counter-number" data-count="1234">0</h2>
+      <p class="counter-label">Happy customer</p>
+    </div>
+    <div class="counter-item">
+      <h2 class="counter-number" data-count="5678">0</h2>
+      <p class="counter-label">Loan</p>
+    </div>
+    <div class="counter-item">
+      <h2 class="counter-number" data-count="9012">0</h2>
+      <p class="counter-label">Loan</p>
+    </div>
+    <div class="counter-item">
+      <h2 class="counter-number" data-count="12">0</h2>
+      <p class="counter-label">Service</p>
+    </div>
+  </section>
+
+  
   <!-----news section-->
   <div class="container">
     <div class="card">
@@ -298,12 +319,35 @@
         <span class="copyright_text">Copyright © 2021 <a href="#">Tech sahayatri.</a>All rights reserved</span>
         <span class="policy_terms">
           <a href="#">Privacy policy</a>
+
           <a href="#">Terms & condition</a>
         </span>
       </div>
     </div>
   </footer>
   <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const counterItems = document.querySelectorAll(".counter-number");
+        const speed = 200; // The higher the number, the slower the animation
+  
+        counterItems.forEach((counter) => {
+          const updateCount = () => {
+            const target = +counter.getAttribute("data-count");
+            const count = +counter.innerText;
+            const inc = target / speed;
+  
+            if (count < target) {
+              counter.innerText = Math.ceil(count + inc);
+              setTimeout(updateCount, 1);
+            } else {
+              counter.innerText = target;
+            }
+          };
+  
+          updateCount();
+        });
+      });
+   
     // search-box open close js code
     let navbar = document.querySelector(".navbar");
     let searchBox = document.querySelector(".search-box .bx-search");

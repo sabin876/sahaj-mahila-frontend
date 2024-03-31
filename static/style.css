@@ -790,3 +790,54 @@
   background-color: #000; 
   transform: 0.4s ease;
 }
+
+
+
+
+.counter {
+  display: flex;
+  justify-content: space-around;
+  background-color:#dcfce7;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.counter-item {
+  text-align: center;
+}
+
+.counter-number {
+  font-size: 36px;
+  color: #008037;
+  animation: countUp 2s ease-in-out forwards;
+}
+
+.counter-label {
+  font-size: 18px;
+  color: #666;
+}
+
+@keyframes countUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+  .counter {
+    flex-direction: column;
+    align-items: center;
+  }
+  .counter-item {
+    margin-bottom: 20px;
+  }
+}
+
+

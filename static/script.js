@@ -51,3 +51,25 @@ thumbnails.forEach((thumbnail, index) => {
         showSlider();
     })
 })
+// counter section js 
+document.addEventListener("DOMContentLoaded", function () {
+    const counterItems = document.querySelectorAll(".counter-number");
+    const speed = 200; // The higher the number, the slower the animation
+
+    counterItems.forEach((counter) => {
+      const updateCount = () => {
+        const target = +counter.getAttribute("data-count");
+        const count = +counter.innerText;
+        const inc = target / speed;
+
+        if (count < target) {
+          counter.innerText = Math.ceil(count + inc);
+          setTimeout(updateCount, 1);
+        } else {
+          counter.innerText = target;
+        }
+      };
+
+      updateCount();
+    });
+  });
