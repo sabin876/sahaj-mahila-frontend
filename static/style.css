@@ -5,6 +5,9 @@
     box-sizing: border-box;
   }
 
+
+
+ 
 .top-barsection {
     background:#136c2a;
     /*
@@ -35,7 +38,59 @@
   .social-icons a:hover {
     color: #ccc;
   }
-  
+  /*style for the logo and company name with media query*/
+  .company-info {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center align horizontally */
+    text-align: center; /* Center align text */
+    flex-wrap: wrap; /* Wrap items if they overflow */
+}
+
+.company-logo {
+    width: 100px; /* Adjust width as needed */
+    height: 100px; /* Adjust height as needed */
+    background-image: url('../static/images/logo.png'); /* Set background image */
+    background-size: contain; /* Scale the image to fit within the container */
+    background-repeat: no-repeat; /* Prevent repeating of the background image */
+    margin-right: 20px; /* Adjust margin as needed */
+}
+
+.company-names {
+    text-align: center;
+}
+
+.company-name {
+    margin: 0;
+    font-weight: bold; /* Set font weight */
+    font-size: 24px; /* Set font size */
+    color: #136c2a; /* Set font color */
+}
+
+.company-name-nepali {
+    margin: 0;
+    font-size: 18px; /* Adjust font size as needed */
+    font-weight: normal; /* Adjust font weight as needed */
+    border-top: 2px solid #cf1919; /* Add border line */
+    padding-top:1px; /* Add padding to separate the border from text */
+    color: #136c2a; /* Set font color */
+}
+
+@media only screen and (max-width: 600px) {
+    .company-logo {
+        width: 80px; /* Reduce logo size on small screens */
+        height: 80px; /* Reduce logo size on small screens */
+        margin-right: 10px; /* Adjust margin */
+    }
+
+    .company-name {
+        font-size: 20px; /* Reduce font size of company name on small screens */
+    }
+
+    .company-name-nepali {
+        font-size: 16px; /* Reduce font size of Nepali company name on small screens */
+    }
+}
   
     /* Style the container of the marquee */
     .marquee-container {
